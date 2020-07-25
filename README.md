@@ -1,11 +1,33 @@
-# Blockchain Custom Network
-This activity demonstrates how to create a custom testnet blockchain using clique proof of authority consensus algorithm. This testnet was then used to send a successful transaction from node1 to node2. See steps below:
+# Blockchain Custom Network: PetrolCol
+This activity demonstrates how to start the Petrolcol netowrk, a custom testnet blockchain created using clique proof of authority consensus algorithm. This file also demonstrates how to send a successful transaction from node1 to node2 as well as mining in the network. See steps below:
 
-## Setting Up Testnet Blockchain
-1. First, two accounts also known as wallets were created using geth. This was done by running the geth command below in the git bash command prompt.   
- 
-  > **_./geth account new --datadir node1_** 
+## How to start the network:
+1. First we must run each node also known as wallets using geth. This is done by running each geth command below in separate git bash command prompts.
 
-\todo{./geth account new --datadir node2} 
+  > **_$./geth --datadir node1/ --syncmode 'full' --networkid (any_numbers) --rpc --minerthreads 1 --unlock "node1_sealer_address" --password node1/password.txt --mine --allow-insecure-unlock_**
+
+  > **_$./geth --datadir node2/ --syncmode 'full' --networkid <any_numbers> --unlock "node2_sealer_address" --password node2/password.txt --mine --allow-insecure-unlock --port 30304 --bootnodes "enode_address_from_node1" --ipcdisable_**
   
-2. 
+  
+  the **--** are flags that indicate different requests when launching the nodes
+  * --datadir: is the data directory that indicates which node will be used.
+  * --syncmode: uses "fast", "full", or "light" which if set to "full" helps prevent the error "Discarded Bad Propagated Block."
+  * --rpc: enables the HTTP-RPC server
+  * --networkid: is the network id defined in the genesis.json file. Although this can be set to any number, it is advisable ot use the same Network ID sepcified in the genesis.json file.
+  * --minerthreads: specifies the number of CPU threads to use for mining.
+  * --unlock --password --mine: tells the node to use the password in the txt file and begin to mine.
+  * --allow-insecure-network: this allows insecure account to unlock when RPCs are exposed by HTTP. Prevents the HTTP error when added.
+  * --port: this sets the port for the node to run. If node1 is running in port 30303 then node2 must be set to 30304. Both nodes cannot run in the same port.
+  * --bootnodes: it is set using the enode address from node1 mining terminal so that node2 can a make connection with that node. The enode address is comma separated enode URL for p2p discovery bootstrap.
+  * --ipcdisable: disables the IPC_RPC server. It is used for windows if left out can raise errors due to server interferene.
+
+## Making a Transaction on the Petrocol Network:
+ 2. Once both nodes are running and communicating, open the MyCrypto program.
+ 3. Change the network using the "change Network" link on the bottom left hand side. When prompted for a network, select the "Add Custom Node" option. It is the last one on the list.
+ 4. set the Netowrk to "Custom," Node Name to your choosing, Network Name to "Petrocol", Currency to ETH, and Chain ID to 123. Lastly, use the http://127.0.0.1:8545 for the URL, so that it is directed to the RPC port on the local machine.
+ 
+ 5. Once this has been set, select the Keystore file option. In the **Select Wallet File** input field insert the UTC file which is located inside the node1 folder.
+ 6. Copy the pre-fund address into the **To Address** field. This address is the same as the public address from node2. It is what will allow transactions to be set to specified node.
+ 7. Select an amount and hit **Send Transaction**
+ 
+ 
