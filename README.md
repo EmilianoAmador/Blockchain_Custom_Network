@@ -5,6 +5,7 @@ This activity demonstrates how to create a custom testnet blockchain using cliqu
 1. First, two accounts also known as wallets were created using geth. This was done by running the geth command below in the git bash command prompt.   
  
   > **_./geth account new --datadir node1_** 
- \todo{./geth account new --datadir node2} 
+
+\todo{./geth account new --datadir node2} 
   
 2. 
