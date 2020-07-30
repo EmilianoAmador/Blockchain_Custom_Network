@@ -20,6 +20,8 @@ This activity demonstrates how to start the Petrolcol netowrk, a custom testnet 
   * --port: this sets the port for the node to run. If node1 is running in port 30303 then node2 must be set to 30304. Both nodes cannot run in the same port.
   * --bootnodes: it is set using the enode address from node1 mining terminal so that node2 can a make connection with that node. The enode address is comma separated enode URL for p2p discovery bootstrap.
   * --ipcdisable: disables the IPC_RPC server. It is used for windows if left out can raise errors due to server interferene.
+  
+![Dashboard](Screenshots/RunningNodes.png)
 
 ## Making a Transaction on the Petrocol Network:
  2. Once both nodes are running and communicating, open the MyCrypto program.
