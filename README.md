@@ -4,23 +4,27 @@ This activity demonstrates how to start the Petrolcol netowrk, a custom testnet 
 ## How to start the network:
 1. First we must run each node also known as wallets using geth. This is done by running each geth command below in separate git bash command prompts.
 
-  > **_$./geth --datadir node1/ --syncmode 'full' --networkid (any_numbers) --rpc --minerthreads 1 --unlock "node1_sealer_address" --password node1/password.txt --mine --allow-insecure-unlock_**
+  > **_$./geth --datadir node1/ --syncmode 'full' --networkid <any_numbers> --rpc --minerthreads 1 --unlock "node1_sealer_address" --password node1/password.txt --mine --allow-insecure-unlock_**
 
-  > **_$./geth --datadir node2/ --syncmode 'full' --networkid <any_numbers> --unlock "node2_sealer_address" --password node2/password.txt --mine --allow-insecure-unlock --port 30304 --bootnodes "enode_address_from_node1" --ipcdisable_**
+  > **_$./geth --datadir node2/ --syncmode 'full' --networkid <any_numbers> --unlock "node2_sealer_address" --password node2/password.txt --mine --allow-insecure-unlock --port 30304 --bootnodes "<enode_address_from_node1>" --ipcdisable_**
   
   
-  the **--** are flags that indicate different requests when launching the nodes
+  The **--** are flags that indicate different requests when launching the nodes
   * --datadir: is the data directory that indicates which node will be used.
   * --syncmode: uses "fast", "full", or "light" which if set to "full" helps prevent the error "Discarded Bad Propagated Block."
   * --rpc: enables the HTTP-RPC server
-  * --networkid: is the network id defined in the genesis.json file. Although this can be set to any number, it is advisable ot use the same Network ID sepcified in the genesis.json file.
+  * --networkid: is the network id defined in the genesis.json file. Although this can be set to any number, it is advisable ot use the same Network ID sepcified in the genesis.json file. In other words use the same number as the chain ID in order to prevent invalid transaction errors.
   * --minerthreads: specifies the number of CPU threads to use for mining.
   * --unlock --password --mine: tells the node to use the password in the txt file and begin to mine.
   * --allow-insecure-network: this allows insecure account to unlock when RPCs are exposed by HTTP. Prevents the HTTP error when added.
   * --port: this sets the port for the node to run. If node1 is running in port 30303 then node2 must be set to 30304. Both nodes cannot run in the same port.
-  * --bootnodes: it is set using the enode address from node1 mining terminal so that node2 can a make connection with that node. The enode address is comma separated enode URL for p2p discovery bootstrap.
   * --ipcdisable: disables the IPC_RPC server. It is used for windows if left out can raise errors due to server interferene.
+  * --bootnodes: it is set using the enode address from node1 mining terminal so that node2 can a make connection with that node. The enode address is comma separated enode URL for p2p discovery bootstrap. To find it simply look for it after running node 1. It should be displayed under self= as shown in the image below:
+  ![Dashboard](Screenshots/Enode.jpg)
   
+  
+  
+The nodes Should display messages like the ones in the image below indicating that it is looking for peers and mining on the network. If done correctly the nodes will communicate and are ready to validate transactions.
 ![Dashboard](Screenshots/RunningNodes.png)
 
 ## Making a Transaction on the Petrocol Network:
