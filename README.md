@@ -30,7 +30,7 @@ Once both nodes are running, the nodes Should display messages like the ones in 
  3. Change the network using the "change Network" link on the bottom left hand side. When prompted for a network, select the "Add Custom Node" option. It is the last one on the list.\
  ![Dashboard](Screenshots/changenetwork.png)
    
- 4. Select +Add Custom Node\
+ 4. Select **+Add Custom Node**\
  ![Dashboard](Screenshots/addcustomnetwork.png)
    
  5. set the Netowrk to "Custom," Node Name to your choosing, Network Name to "Petrocol", Currency to ETH, and Chain ID to 123. Lastly, use the https://127.0.0.1:8545 for the URL, so that it is directed to the RPC port on the local machine.\
