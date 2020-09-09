@@ -1,5 +1,5 @@
 # Blockchain Custom Network: PetrolCol
-This activity demonstrates how to start the Petrolcol netowrk, a custom testnet blockchain created using clique proof of authority consensus algorithm. This file also demonstrates how to send a successful transaction from node1 to node2 as well as mining in the network. See steps below:
+This activity demonstrates how to start the Petrolcol network, a custom testnet blockchain created using clique proof of authority consensus algorithm. This file also demonstrates how to send a successful transaction from node1 to node2 as well as mining in the network. See steps below:
 
 ## How to start the network:
 1. First, we must run each node also known as wallets using geth. This is done by running each geth command below in separate git bash command prompts.
@@ -22,7 +22,7 @@ This activity demonstrates how to start the Petrolcol netowrk, a custom testnet 
   * --bootnodes: it is set using the enode address from node1 mining terminal so that node2 can a make connection with that node. The enode address is comma separated enode URL for p2p discovery bootstrap. To find it simply look for it after running node 1. It should be displayed under self= as shown in the image below:
   ![Dashboard](Screenshots/Enode.jpg)
   
-Once both nodes are running, the nodes Should display messages like the ones in the image below indicating that they're looking for peers and or mining on the network. If done correctly the nodes will communicate and are ready to validate transactions.
+Once both nodes are running, the nodes Should display messages like the ones in the image below indicating that they are looking for peers and or mining on the network. If done correctly the nodes will communicate and are ready to validate transactions.
 ![Dashboard](Screenshots/RunningNodes.png)
 
 ## Making a Transaction on the Petrocol Network:
@@ -47,7 +47,7 @@ Once both nodes are running, the nodes Should display messages like the ones in 
  8. Confirm the transaction by clicking **Send**.
  ![Dashboard](Screenshots/confirm_transaction.png)
  
- 9. Once transaction is over, a green ribbon message will appear with access to the transaction status. Click **Check TX Status** to view transaction status. 
+ 9. Once the transaction is over, a green ribbon message will appear with access to the transaction status. Click **Check TX Status** to view transaction status. 
  ![Dashboard](Screenshots/check_tx.png)
  
  10. Once the transaction has been validated, the status of the transaction receipt (or Block) should appear as successful.
