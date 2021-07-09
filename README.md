@@ -1,8 +1,8 @@
 # Blockchain Custom Network: PetrolCol
-This page demonstrates how to start the Petrolcol network, a custom testnet blockchain created using clique proof of authority consensus algorithm. This file also demonstrates how to send a successful transaction from node1 to node2 as well as mining in the network. See steps below:
+This page demonstrates a step-by-step process of creating and running an Ethereum blockchain custom test-net equipped with a proof of authority consensus algorithm using Geth on the Command Prompt. Additionally, we'll be exploring the process of sending successful transactions between two nodes and the mining process in the network. 
 
 ## How to start the network:
-1. First, we must run each node also known as wallets using geth. This is done by running each geth command below in separate git bash command prompts.
+1. First, run each node using geth. This is done by running each geth command below in separate git bash command prompts.
 
   > **_$./geth --datadir node1/ --syncmode 'full' --networkid <any_numbers> --rpc --minerthreads 1 --unlock "node1_sealer_address" --password node1/password.txt --mine --allow-insecure-unlock_**
 
